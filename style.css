@@ -1,0 +1,186 @@
+. {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial,sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}/* Task 1:Header Navigation */
+.header {
+    height: 80px;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db
+}
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-menu a:hover {
+    color: #3498db;
+}
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.user-section button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}/*Task 2:Main Dashboard Layout*/
+.dashboard {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh-160px);
+}
+.sidebar {
+    width: 250px;
+    background: #34495e;
+    color: white;
+    padding: 20px 0;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar li {
+    margin: 0;
+}
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid #2c3e50;
+    transition: background 0.3s;
+}
+.sidebar a:hover {
+    background: #2c3e50;
+}
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background: #ecf0f1;
+}
+.widgets {
+    width: 300px;
+    background: #bdc3c7;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.widget {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #2c3e50;
+}/* Task 3:Card Grid */
+.card-grind {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.card {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 250px;
+    height: 200px;
+    background:white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}/* Task 4: Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.footer-column {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100px;
+}
+.footer-column h4 {
+    margin-bottom: 10px;
+    color: #3498db;
+}/* mobile Responsiveness */
+@media (max-width: 768px) {
+.dashboard {
+    flex-direction: column;
+}
+.sidebar {
+    width: 100%;
+    order: 2;
+}
+.sidebar ul {
+    display: flex;
+    overflow-x: auto;
+}
+.sidebar li {
+    min-width: 120px;
+}
+.main-content {
+    order: 1;
+}
+.widgets {
+    width: 100%;
+    order: 3;
+    flex-direction: row;
+    overflow-x: auto;
+}
+.widget {
+    min-width: 200px;
+}
+.card {
+    flex: 1 1 100%;
+}
+.nav-menu {
+    display: none;
+}
+.footer {
+    flex-direction: column;
+    gap: 20px;
+}
